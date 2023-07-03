@@ -39,26 +39,6 @@ namespace TestesAutomatizados
             Assert.IsTrue(driver.Url.Contains("id"));
         }
         
-        //[Test]
-        //public void TestLogin2()
-        //{
-        //    // Navegar para a página de login
-        //    driver.Navigate().GoToUrl("https://www.bne.com.br/");
-
-        //    // Encontrar os elementos do formulário de login e realizar ações
-        //    IWebElement botaoEntrar = driver.FindElement(By.XPath("//div[2]/div[2]/div/div/a"));
-        //    //IWebElement passwordInput = driver.FindElement(By.Id("pass"));
-        //    //IWebElement loginButton = driver.FindElement(By.Id("u_0_5_hh"));
-
-        //    botaoEntrar.Click();
-     
-           
-
-
-        //    // Verificar se o login foi bem-sucedido
-        //    Assert.IsTrue(driver.Url.Contains("id"));
-        //}
-
         [TearDown]
         public void Teardown()
         {
