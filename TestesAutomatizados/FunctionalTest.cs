@@ -24,19 +24,24 @@ namespace TestesAutomatizados
             driver.Navigate().GoToUrl("https://www.bne.com.br/");
 
             // Encontrar os elementos do formulário de login e realizar ações
-            IWebElement botaoEntrar = driver.FindElement(By.XPath("//div[2]/div[2]/div/div/a"));
-            //IWebElement passwordInput = driver.FindElement(By.Id("pass"));
-            //IWebElement loginButton = driver.FindElement(By.Id("u_0_5_hh"));
-            
+            IWebElement botaoEntrar = driver.FindElement(By.Id("BtnDirectLoginNonSTC"));
             botaoEntrar.Click();
 
-            IWebElement campoEmail = driver.FindElement(By.XPath("//div[1]/form/fieldset/div/input"));
-
+            IWebElement campoEmail = driver.FindElement(By.Id("newloginEmailInput"));
             campoEmail.SendKeys("monikamalpha@gmail.com");
 
+            IWebElement botaoContinuar = driver.FindElement(By.Id("loginHandlerBtn"));
+            botaoContinuar.Click();
+
+            Thread.Sleep(2000);
+            IWebElement campoSenha = driver.FindElement(By.Id("newPasswordInput"));
+            campoSenha.SendKeys("M0nik@30207&@#&");
+
+            IWebElement botaoConcluirLogin = driver.FindElement(By.Id("loginHandlerBtn"));
+            botaoConcluirLogin.Click();
 
             // Verificar se o login foi bem-sucedido
-            Assert.IsTrue(driver.Url.Contains("id"));
+            Assert.IsTrue(driver.Url.Contains("sala-vip"));
         }
         
         [TearDown]
